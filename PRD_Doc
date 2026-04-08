@@ -1,0 +1,170 @@
+# 📄 PRD: WhatsApp Insurance Policy Self-Service Feature
+
+---
+
+## 1. 📌 Product Overview
+
+Enable customers to check insurance policy details via WhatsApp chatbot without calling customer support.
+
+### Problem
+- High call center load  
+- Slow response time  
+- Poor customer experience  
+
+### Solution
+- Provide instant self-service via WhatsApp chatbot  
+
+---
+
+## 2. 🎯 Objectives & Success Metrics
+
+### Objectives
+- Reduce call center queries  
+- Improve customer satisfaction  
+- Enable 24/7 access  
+
+### KPIs
+- 40% reduction in policy-related calls  
+- < 5 sec response time  
+- 80% successful query resolution  
+- CSAT > 4.5  
+
+---
+
+## 3. 👤 User Personas
+
+### Persona 1: Busy Professional
+- Needs quick info  
+- Prefers WhatsApp over calls  
+
+### Persona 2: Senior Citizen
+- Needs simple interaction  
+- Avoids complex apps  
+
+---
+
+## 4. 📊 Use Cases
+
+- Check policy status  
+- View premium details  
+- Download policy document  
+- Check expiry date  
+
+---
+
+## 5. 🧩 Features
+
+### Core Features
+- Policy status check  
+- Premium details  
+- Policy download (PDF)  
+- Expiry reminder  
+
+### Supporting Features
+- OTP-based authentication  
+- Error handling messages  
+- Retry mechanism  
+
+---
+
+## 6. 🧵 User Stories
+
+- As a user, I want to check my policy status so that I know if it is active  
+- As a user, I want to download my policy so that I can keep a copy  
+- As a user, I want to see premium details so that I know payment info  
+
+---
+
+## 7. ✅ Acceptance Criteria
+
+### Policy Status
+- Given valid policy number  
+- When user requests status  
+- Then system should return correct policy status  
+
+### Invalid Case
+- Given invalid policy number  
+- Then show error message  
+
+---
+
+## 8. 🔄 User Flow (High-Level)
+
+1. User sends message: “Check policy”  
+2. Bot asks for policy number  
+3. User enters policy number  
+4. System validates  
+5. Fetch data from backend  
+6. Return response  
+
+---
+
+## 9. 🖼️ Flowchart
+
+![Flowchart](./flowchart.png)
+
+👉 Create this using Draw.io / Lucidchart and upload as `flowchart.png`
+
+---
+
+## 10. 🏗️ Architecture Diagram
+
+![Architecture](./architecture.png)
+
+### Components:
+- API Gateway → Entry point  
+- Chatbot Engine → Intent detection  
+- Business Logic Layer → Rules & processing  
+- Database → Stores user & policy data  
+- External APIs → Fetch insurance details  
+
+👉 Upload as `architecture.png`
+
+---
+
+## 11. 🖼️ Wireframe (Text Representation)
+
+### Chat Flow
+
+- Bot: “Welcome! How can I help?”  
+- User: “Check policy”  
+- Bot: “Please enter policy number”  
+- User: “12345”  
+- Bot: “Your policy is ACTIVE. Expiry: 12 Dec 2026”  
+
+---
+
+## 12. ⚙️ Functional Requirements
+
+- System should validate policy number  
+- System should fetch data from backend API  
+- System should respond within 5 seconds  
+- System should support retry for failures  
+
+---
+
+## 13. 🚫 Non-Functional Requirements
+
+- Response time < 5 seconds  
+- 99.9% uptime  
+- Secure data handling (encryption)  
+- Scalable to 10,000 concurrent users  
+
+---
+
+## 14. 🔌 Dependencies
+
+- WhatsApp Business API  
+- Backend insurance system APIs  
+- OTP service  
+
+---
+
+## 15. 🔗 Sample API Section
+
+### 📥 Request
+```json
+{
+  "policy_number": "POL12345",
+  "user_id": "98765"
+}
